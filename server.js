@@ -1,12 +1,12 @@
-const express = require("express"),
-app = express(),
-PORT = 8080;
+const express = require("express");
+require("dotenv").config();
+const app = express();
 
 app.get("/*", (req,res)=>{
     res.send("hello there");
 });
 
-
-app.listen(PORT, () => {
-    console.log(`app is listening on: ${PORT}`);
-})
+const PORT = process.env.PORT;
+app.listen(PORT,()=>{
+    console.log(PORT);
+});
